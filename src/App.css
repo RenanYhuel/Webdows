@@ -1,0 +1,448 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 9pt;
+  user-select: none;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+}
+
+.desktop {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 95vh;
+  width: 100vw;
+  background: url('./assets/wallpaper.png') no-repeat center center fixed;
+  background-size: cover;
+  overflow: hidden;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(15, 1fr);
+  grid-template-rows: repeat(15, 1fr);
+  grid-gap: 10px;
+  width: 100%;
+  height: 100%;
+  max-width: 100vw;
+}
+
+.desktop-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  border-radius: 2px;
+  color: #fff;
+  cursor: pointer;
+  width: 100px;
+  height: 80px;
+  padding: 5px;
+}
+
+.desktop-icon:hover {
+  background-color: #dddddd36;
+}
+
+.desktop-icon img {
+  width: 50px;
+  margin-bottom: 5px;
+}
+
+.desktop-icon span {
+  font-size: 15px;
+  text-align: center;
+  text-shadow: 1px 1px 1px #000;
+}
+
+.taskbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 5vh;
+  width: 100vw;
+  background-color: #00050a;
+}
+
+.taskbar .left-container {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.taskbar .logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 0 20px;
+  cursor: pointer;
+}
+
+.taskbar .logo-container:hover {
+  background-color: #dddddd86;
+}
+
+.taskbar .logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 3vh;
+  height: 3vh;
+  background: url('./assets/windows_icon.svg') no-repeat center center;
+  background-size: contain;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.taskbar .search-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 411px;
+  background-color: #fff;
+  margin-right: 10px;
+  gap: 10px;
+}
+
+.taskbar .search-container input {
+  width: 100%;
+  height: 100%;
+  padding: 0 20px;
+  font-size: 14px;
+  border: none;
+  background-color: #303030;
+  font-weight: 700;
+  color: #777976;
+  outline: none;
+}
+
+.taskbar .icons-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.taskbar-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  cursor: pointer;
+  padding: 3px 5px;
+}
+
+.taskbar-icon img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.taskbar-icon:hover {
+  background-color: #dddddd86;
+}
+
+.taskbar-icon.open {
+  border-bottom: 3px solid gray;
+}
+
+.taskbar-icon.active {
+  background-color: #dddddd3a;
+}
+
+.taskbar .right-container {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding-right: 10px;
+}
+
+.taskbar .right-container .date-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: end;
+  height: 100%;
+  padding: 10px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.taskbar .right-container .date-container:hover {
+  background-color: #dddddd86;
+
+}
+
+.taskbar .right-container .volume-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 5px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.taskbar .right-container .volume-container:hover {
+  background-color: #dddddd86;
+}
+
+.taskbar .right-container .volume-container span {
+  font-size: 20px;
+}
+
+
+.taskbar .right-container .wifi-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 5px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.taskbar .right-container .wifi-container:hover {
+  background-color: #dddddd86;
+}
+
+.taskbar .right-container .wifi-container span {
+  font-size: 16px;
+}
+
+.icon-clicked {
+  background-color: #dddddd86;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+
+.volume-settings {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  gap: 10px;
+  width: 360px;
+  background-color: #00050a;
+  color: #fff;
+  z-index: 10000;
+  padding: 20px;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.volume-settings header {
+  display: flex;
+  align-items: left;
+  width: 100%;
+  color: #fff;
+  text-shadow: 1px 1px 1px #000;
+  font-size: 14px;
+}
+
+.volume-settings .volume-content {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+}
+
+.volume-settings .volume-content .volume-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 10px;
+  padding-left: 0;
+}
+
+.volume-settings .volume-content input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  border: none;
+  background-color: #303030;
+  font-weight: 700;
+  border: none;
+  color: #777976;
+  outline: none;
+}
+
+.volume-settings .volume-content span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+}
+
+.window {
+  box-sizing: border-box;
+  border-radius: 2px;
+  position: absolute;
+  background: #fff;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+  user-select: none;
+  min-width: 320px;
+  min-height: 200px;
+}
+
+.window-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: black;
+  padding: 5px 10px;
+  border-bottom: 1px solid #dddddd86;
+}
+
+.window-infos {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.window-header img {
+  width: 18px;
+  height: 18px;
+}
+
+.window-title {
+  font-size: 14px;
+}
+
+.window-buttons {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.window-btn {
+  width: 20px;
+  height: 20px;
+  background: transparent;
+  border: none;
+  color: black;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+
+.window-content {
+  flex-grow: 1;
+  background: white;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.window.maximized {
+  width: 100vw !important;
+  height: 100vh !important;
+  top: 0 !important;
+  left: 0 !important;
+}
+
+.window.minimized {
+  min-width: 0 !important;
+  min-height: 0 !important;
+  height: 0 !important;
+  width: 0 !important;
+  overflow: hidden !important;
+}
+
+.resize-handle {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    bottom: 0;
+    right: 0;
+    cursor: se-resize;
+    background-color: transparent;
+}
+
+/* Styles pour les poignées de redimensionnement */
+.resize-handle-right,
+.resize-handle-left,
+.resize-handle-top,
+.resize-handle-bottom {
+    position: absolute;
+    background-color: transparent;
+}
+
+.resize-handle-right {
+    width: 10px;
+    height: 100%;
+    right: 0;
+    top: 0;
+    cursor: e-resize;
+}
+
+.resize-handle-left {
+    width: 10px;
+    height: 100%;
+    left: 0;
+    top: 0;
+    cursor: w-resize;
+}
+
+.resize-handle-top {
+    width: 100%;
+    height: 10px;
+    top: 0;
+    left: 0;
+    cursor: n-resize;
+}
+
+.resize-handle-bottom {
+    width: 100%;
+    height: 10px;
+    bottom: 0;
+    left: 0;
+    cursor: s-resize;
+}
+
+/* Styles pour forcer le curseur à rester en mode de redimensionnement */
+body.resizing {
+    cursor: e-resize !important;
+}
+
+body.resizing-vertical {
+    cursor: n-resize !important;
+}
+
+body.resizing-corner {
+    cursor: nwse-resize !important;
+}
+
+.window-btn:hover {
+  color: rgb(102, 102, 102);
+}
+
+.window-btn.close:hover {
+  color: red;
+}
+
