@@ -45,11 +45,17 @@ Join us in redefining what’s possible in the browser! 🖥️✨
 ├── 📂 **apps/** – Individual apps (e.g., Notepad).  
 │   ├── 📝 **notepad/** – Notepad application files.  
 ├── 📂 **context/** – Global state management.  
+│   ├── 🧠 **WindowsContext.tsx** – Manages window states.  
 ├── 📂 **hooks/** – Custom React hooks.  
+│   ├── 🔗 **useWindowsContext.ts** – Hook for accessing Windows context.  
 ├── 📂 **types/** – TypeScript type definitions.  
+│   ├── 📜 **WindowsContextProps.ts** – Type definitions for Windows context.  
 ├── 📂 **utils/** – Helper functions for desktop & taskbar logic.  
+│   ├── ⚙️ **desktopUtils.ts** – Utilities for desktop management.  
+│   ├── ⚙️ **taskbarUtils.ts** – Utilities for taskbar management.  
+│   ├── ⚙️ **windowUtils.ts** – Utilities for window management.  
 
-🛠️ **Want more details?** Check the full documentation! 📖
+🛠️ **Want more details?** Keep reading for an in-depth guide! 📖
 
 ---
 
@@ -75,6 +81,25 @@ npm run dev
 
 ---
 
+## 🖥️ How It Works
+
+### 🏗️ Windows Management
+Each application runs inside a draggable and resizable window, mimicking a real OS environment. 
+
+### 🖥️ Desktop Interaction
+The desktop acts as the main workspace where windows can be moved and managed dynamically.
+
+### 📌 Taskbar
+A taskbar is included to keep track of open applications and provide easy switching between them.
+
+### 📂 Adding a New Application
+To add a new application:
+1. Create a new folder inside `src/apps/`.
+2. Develop your component following the existing structure.
+3. Register it inside `Desktop.tsx` for it to appear.
+
+---
+
 ## 🔥 The Biggest Challenge
 
 Recreating an OS-like environment in the web browser is no small feat. Managing window states, taskbar interactions, and dynamic application loading has been an exciting technical challenge. But with determination, anything is possible! 💪
@@ -93,5 +118,4 @@ Recreating an OS-like environment in the web browser is no small feat. Managing 
 
 Fork the repo, submit a Pull Request, and help shape the future of Webdows! 🚀
 
-💻 **[GitHub Repository](https://github.com/RenanYhuel/Webdows)**
-
+💻 **[GitHub Repository](https://github.com/TonGitHub/Webdows)**
