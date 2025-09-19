@@ -1,6 +1,6 @@
 # 🌐 Webdows – A Web-Based Windows Reproduction
 
-> "Embrace the challenge, evolve with your apps!"
+"E> "Embrace the challenge, evolve with your apps!"
 
 ---
 

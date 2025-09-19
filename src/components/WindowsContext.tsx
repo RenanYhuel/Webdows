@@ -3,10 +3,13 @@ import { WindowsContext } from "../context/WindowsContext";
 import { WindowsContextProps } from "../types/WindowsContextProps";
 import NotepadIcon from "./../assets/notepad_icon.png";
 import Notepad from "../components/apps/notepad/Notepad";
+import BrowserIcon from "./../assets/browser_icon.svg";
+import Browser from "../components/apps/browser/Browser";
 
 export const WindowsProvider = ({ children }: { children: ReactNode }) => {
     const [apps, setApps] = useState<WindowsContextProps["apps"]>([
         { id: 1, name: "Notepad", icon: NotepadIcon, component: Notepad },
+        { id: 2, name: "Navigateur", icon: BrowserIcon, component: Browser },
     ]);
     const [openWindows, setOpenWindows] = useState<WindowsContextProps["openWindows"]>([]);
     const [windowsOrder, setWindowsOrder] = useState<WindowsContextProps["windowsOrder"]>([1, 2, 3]);
